@@ -1,105 +1,212 @@
 {
-  "_version": "1.49.0",
-  "sap.app": {
-    "id": "com.lb.flp.tracker.ovp",
-    "type": "application",
-    "i18n": "i18n/i18n.properties",
-    "applicationVersion": {
-      "version": "0.0.1"
-    },
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}",
-    "resources": "resources.json",
-    "sourceTemplate": {
-      "id": "@sap/generator-fiori:basic",
-      "version": "1.9.0",
-      "toolsId": "87b10d40-6f88-48cd-a1d2-bdcf1b4ff1db"
-    }
-  },
-  "sap.ui": {
-    "technology": "UI5",
-    "icons": {
-      "icon": "",
-      "favIcon": "",
-      "phone": "",
-      "phone@2": "",
-      "tablet": "",
-      "tablet@2": ""
-    },
-    "deviceTypes": {
-      "desktop": true,
-      "tablet": true,
-      "phone": true
-    }
-  },
-  "sap.ui5": {
-    "flexEnabled": true,
-    "dependencies": {
-      "minUI5Version": "1.111.0",
-      "libs": {
-        "sap.m": {},
-        "sap.ui.core": {},
-        "sap.f": {},
-        "sap.suite.ui.generic.template": {},
-        "sap.ui.comp": {},
-        "sap.ui.generic.app": {},
-        "sap.ui.table": {},
-        "sap.ushell": {}
-      }
-    },
-    "contentDensities": {
-      "compact": true,
-      "cozy": true
-    },
-    "models": {
-      "i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "settings": {
-          "bundleName": "com.lb.flp.tracker.ovp.i18n.i18n"
-        }
-      }
-    },
-    "resources": {
-      "css": [
-        {
-          "uri": "css/style.css"
-        }
-      ]
-    },
-    "routing": {
-      "config": {
-        "routerClass": "sap.m.routing.Router",
-        "viewType": "XML",
-        "async": true,
-        "viewPath": "com.lb.flp.tracker.ovp.view",
-        "controlAggregation": "pages",
-        "controlId": "app",
-        "clearControlAggregation": false
-      },
-      "routes": [
-        {
-          "name": "RouteView1",
-          "pattern": ":?query:",
-          "target": [
-            "TargetView1"
-          ]
-        }
-      ],
-      "targets": {
-        "TargetView1": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "View1",
-          "viewName": "View1"
-        }
-      }
-    },
-    "rootView": {
-      "viewName": "com.lb.flp.tracker.ovp.view.App",
-      "type": "XML",
-      "async": true,
-      "id": "App"
-    }
-  }
+	"_version": "1.7.0",
+	"start_url": "start.html",
+	"sap.app": {
+		"id": "com.lb.flp.tracker.FlpPluginTrackerUsrOVP",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{app_title}}",
+		"description": "{{app_description}}",
+		"dataSources": {
+			"ZFLP_C_USRCNT_CDS": {
+				"uri": "/sap/opu/odata/sap/ZFLP_C_USRCNT_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"annotations": [
+						"ZFLP_C_USRCNT_CDS_VAN",
+						"annotation1"
+					],
+					"localUri": "localService/ZFLP_C_USRCNT_CDS/metadata.xml"
+				}
+			},
+			"ZFLP_C_USRCNT_CDS_VAN": {
+				"uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZFLP_C_USRCNT_CDS_VAN',Version='0001')/$value/",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "localService/ZFLP_C_USRCNT_CDS/ZFLP_C_USRCNT_CDS_VAN.xml"
+				}
+			},
+			"annotation1": {
+				"type": "ODataAnnotation",
+				"uri": "annotation1.xml",
+				"settings": {
+					"localUri": "annotation1.xml"
+				}
+			},
+			"ZFLP_C_USRCNTAPP_CDS": {
+				"uri": "/sap/opu/odata/sap/ZFLP_C_USRCNTAPP_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"annotations": [
+						"ZFLP_C_USRCNTAPP_CDS_VAN",
+						"annotation2"
+					],
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZFLP_C_USRCNTAPP_CDS_VAN": {
+				"uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZFLP_C_USRCNTAPP_CDS_VAN',Version='0001')/$value/",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "localService/ZFLP_C_USRCNTAPP_CDS/ZFLP_C_USRCNTAPP_CDS_VAN.xml"
+				}
+			},
+			"annotation2": {
+				"type": "ODataAnnotation",
+				"uri": "annotation2.xml",
+				"settings": {
+					"localUri": "annotation2.xml"
+				}
+			},
+			"ZFLP_C_GLOBALFILTERS_CDS": {
+				"uri": "/sap/opu/odata/sap/ZFLP_C_GLOBALFILTERS_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"annotations": [
+						"ZFLP_C_GLOBALFILTERS_CDS_VAN",
+						"annotation3"
+					],
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZZFLP_C_GLOBALFILTERS_CDS_VAN": {
+				"uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZFLP_C_GLOBALFILTERS_CDS_VAN',Version='0001')/$value/",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "localService/ZFLP_C_GLOBALFILTERS_CDS/ZFLP_C_GLOBALFILTERS_CDS_VAN.xml"
+				}
+			},
+			"annotation3": {
+				"type": "ODataAnnotation",
+				"uri": "annotation3.xml",
+				"settings": {
+					"localUri": "annotation3.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ovp": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"@i18n": {
+				"preload": true,
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"ZFLP_C_USRCNT_CDS": {
+				"dataSource": "ZFLP_C_USRCNT_CDS",
+				"settings": {
+					"defaultCountMode": "Inline"
+				}
+			},
+			"ZFLP_C_USRCNTAPP_CDS": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZFLP_C_USRCNTAPP_CDS",
+				"preload": true
+			},
+			"ZFLP_C_GLOBALFILTERS_CDS": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"dataSource": "ZFLP_C_GLOBALFILTERS_CDS",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				}
+			}
+		},
+		"extends": {
+			"extensions": {}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.ovp": {
+		"globalFilterModel": "ZFLP_C_GLOBALFILTERS_CDS",
+		"globalFilterEntityType": "ZFLP_C_GLOBALFILTERSType",
+		"containerLayout": "resizable",
+		"enableLiveFilter": true,
+		"considerAnalyticalParameters": false,
+		"cards": {
+			"card01": {
+				"model": "ZFLP_C_USRCNT_CDS",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card01_title}}",
+					"subTitle": "{{card01_subTitle}}",
+					"entitySet": "ZFLP_C_USRCNT",
+					"sortBy": "logon_date",
+					"sortOrder": "descending",
+					"addODataSelect": false,
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem#F2"
+				}
+			},
+			"card02": {
+				"model": "ZFLP_C_USRCNT_CDS",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "{{card02_title}}",
+					"subTitle": "{{card02_subTitle}}",
+					"entitySet": "ZFLP_C_USRCNT",
+					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#F2",
+					"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#F2",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#F2",
+					"navigation": "dataPointNav"
+				}
+			},
+			"card03": {
+				"model": "ZFLP_C_USRCNTAPP_CDS",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card03_title}}",
+					"subTitle": "{{card03_subTitle}}",
+					"entitySet": "ZFLP_C_USRCNTAPP",
+					"sortBy": "total_users",
+					"sortOrder": "descending",
+					"addODataSelect": false,
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem#F3"
+				}
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zflptrackusrovp/webapp",
+		"_version": "1.1.0"
+	}
 }
