@@ -13,7 +13,7 @@ A detailed background has been mentioned in [SAP Blog](https://blogs.sap.com/?p=
 This document is for whom has the experience of SAPUI5 along with ABAP OData service development
 
 ## Preview
-![ApplicationOverviewPage diagram](images/ovpPreview.JPG)
+![ApplicationOverviewPage diagram](images/ovp_Preview.JPG)
 
 ## Implementation Steps
 
